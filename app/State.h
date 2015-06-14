@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 typedef enum{
+  Initial,
   PRESS,
   RELEASE,
   LED_ON,

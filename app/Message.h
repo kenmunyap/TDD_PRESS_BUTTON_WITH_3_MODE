@@ -3,7 +3,7 @@
 
 typedef enum{
   DO_NOTHING,
-  CHANGE_STATE,
+  CHANGE_MODE,
 }Message;
 
 extern Message msg;
