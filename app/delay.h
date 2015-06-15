@@ -1,7 +1,6 @@
-#ifndef delay_H
-#define delay_H
+#ifndef __DELAY_H
+#define __DELAY_H
 
-int delay();
+int delay(int x,int y);
 
-
-#endif // delay_H
+#endif //__DELAY_H

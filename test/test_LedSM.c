@@ -24,12 +24,12 @@ void test_module_generator_needs_to_be_implemented(void){
 	TEST_ASSERT_EQUAL(ledData.state,LED_BLINKING_ON);
 	isButtonPressed_ExpectAndReturn(false);
 	buttonSM(&buttonData);
-	delay_ExpectAndReturn(1);
+	delay_IgnoreAndReturn(1);
 	ledSM(&ledData);
 	TEST_ASSERT_EQUAL(ledData.state,LED_BLINKING_OFF);
 	isButtonPressed_ExpectAndReturn(false);
 	buttonSM(&buttonData);
-	delay_ExpectAndReturn(1);
+	delay_IgnoreAndReturn(1);
 	ledSM(&ledData);
 	TEST_ASSERT_EQUAL(ledData.state,LED_BLINKING_ON);
 	isButtonPressed_ExpectAndReturn(true);

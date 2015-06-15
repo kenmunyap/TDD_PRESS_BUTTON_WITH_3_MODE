@@ -3,6 +3,7 @@
 #include "Message.h"
 #include "button.h"
 #include "delay.h"
+// #include "stm32f4xx_hal_gpio.h"
 
 void ledInitData(LedData *data){
   data->state = LED_OFF;
@@ -17,30 +18,30 @@ void ledSM(LedData *data){
       }
       break;
     case LED_ON:
-		if(msg == CHANGE_MODE){
-			data->state = LED_OFF;
-			msg = DO_NOTHING;
-		}
+      if(msg == CHANGE_MODE){
+        data->state = LED_OFF;
+        msg = DO_NOTHING;
+      }
       break;
     case LED_BLINKING_ON:
-		if(msg == CHANGE_MODE){
-			data->state = LED_ON;
-			msg = DO_NOTHING;
-		}else{
-			if(delay() == 1){
-				data->state = LED_BLINKING_OFF;
-			}
-		}
+      if(msg == CHANGE_MODE){
+        data->state = LED_ON;
+        msg = DO_NOTHING;
+      }else{
+        if(delay(1,1) == 1){
+          data->state = LED_BLINKING_OFF;
+        }
+      }
       break;
     case LED_BLINKING_OFF:
-		if(msg == CHANGE_MODE){
-			data->state = LED_ON;
-			msg = DO_NOTHING;
-		}else{
-			if(delay() == 1){
-				data->state = LED_BLINKING_ON;
-			}
-		}
+      if(msg == CHANGE_MODE){
+        data->state = LED_ON;
+        msg = DO_NOTHING;
+      }else{
+        if(delay(1,1) == 1){
+          data->state = LED_BLINKING_ON;
+        }
+      }
       break;
     default:
       printf("Error : unknown state encountered in ledSM: %d\n", data->state);
