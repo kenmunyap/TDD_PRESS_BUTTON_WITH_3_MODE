@@ -1,5 +1,5 @@
-#ifndef TaskControlBlock_H
-#define TaskControlBlock_H
+#ifndef TASK_H
+#define TASK_H
 
 typedef struct{
   TaskState state;
@@ -16,4 +16,4 @@ typedef enum{
 }TaskState;
 
 
-#endif //TaskControlBlock_H
+#endif //TASK_H
